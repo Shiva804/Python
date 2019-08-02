@@ -33,10 +33,10 @@ def left(lst2):
 lst=readFile(lst)
 lst2=readFile2(lst2)
 layout=[
-    [sh.Text('Enter TO DO list:')],
+    [sh.Text('Enter TO DO list:',text_color="blue",background_color="cyan")],
     [sh.InputText('',key='name',background_color="Sky Blue"),sh.Button('ADD',key="add",size=(6,1)),sh.CalendarButton("SELECT DATE",target=(1,0),key="dat")],
-    [sh.Text("All Tasks"),sh.Listbox(values=lst,size=(30,10),key="box", enable_events= True ,background_color="Sky Blue"),sh.Text("Completed Tasks"),sh.Listbox( bind_return_key = True,size=(30,10),key="cbox",background_color="Sky Blue",values=lst2)],
-    [sh.Button("DELETE",key="del"),sh.Button("Completed",size=(8,1),key="comp",),sh.Button("Delete Completed",size=(13,1),key="delc",)],[sh.Text("Priority:"),sh.Spin([sz for sz in range(1, 6)], initial_value=1, change_submits=True, key='spin',size=(5,3))],
+    [sh.Text("All Tasks",text_color="blue",background_color="cyan"),sh.Listbox(values=lst,size=(30,10),key="box", enable_events= True ,background_color="Sky Blue"),sh.Text("Completed Tasks",text_color="blue",background_color="cyan"),sh.Listbox( bind_return_key = True,size=(30,10),key="cbox",background_color="Sky Blue",values=lst2)],
+    [sh.Button("DELETE",key="del"),sh.Button("Completed",size=(8,1),key="comp",),sh.Button("Delete Completed",size=(13,1),key="delc")],[sh.Text("Priority:",text_color="blue",background_color="cyan"),sh.Spin([sz for sz in range(1, 6)], initial_value=1, change_submits=True, key='spin',size=(5,3),background_color="Sky Blue")],
     [sh.Button("EXIT",size=(5,1))]
 
 ]
@@ -45,7 +45,7 @@ form = sh.FlexForm('Calendar', no_titlebar=True)
 
 
 
-window=sh.Window("CheckBox",layout)
+window=sh.Window("CheckBox",layout,background_color="cyan")
 
 while True:
     event,values=window.Read()
