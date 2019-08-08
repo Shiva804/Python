@@ -11,7 +11,7 @@ def readl():
     
     c = db.cursor()
     #c.execute('''SELECT Name,date,Priority FROM Checklist1 ORDER BY Priority ASC''')
-    c.execute('''SELECT Name, date, Priority from Checklist1 WHERE Completed=0 ORDER BY Priority ASC ''')
+    c.execute('''SELECT Name, date, Priority from Checklist1 WHERE Completed=0 ORDER BY date ASC ''')
     lst = c.fetchall()
     print(lst,end="")
     y = ""
